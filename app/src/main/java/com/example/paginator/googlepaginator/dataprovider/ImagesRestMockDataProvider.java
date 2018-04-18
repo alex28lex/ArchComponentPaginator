@@ -1,5 +1,7 @@
 package com.example.paginator.googlepaginator.dataprovider;
 
+import android.util.Log;
+
 import com.example.paginator.googlepaginator.model.ImageDataDto;
 import com.example.paginator.googlepaginator.model.ImageItemDto;
 
@@ -27,6 +29,7 @@ public class ImagesRestMockDataProvider implements ImagesDataProvider {
             public void subscribe(FlowableEmitter<ImageDataDto> e) throws Exception {
                 ImageDataDto imageDataDto = getPage(nextCursor, imageDataDtos);
                 if (imageDataDto != null) {
+                    Log.v(ImagesRestMockDataProvider.class.getSimpleName(), "load:" + imageDataDto.getId() + "page");
                     e.onNext(imageDataDto);
                     e.onComplete();
                 } else {

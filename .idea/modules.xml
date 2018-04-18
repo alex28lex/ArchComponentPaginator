@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GooglePaginator.iml" filepath="$PROJECT_DIR$/GooglePaginator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArchComponentPaginator.iml" filepath="$PROJECT_DIR$/ArchComponentPaginator.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
