@@ -7,7 +7,7 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.paging.LivePagedListBuilder;
 import android.arch.paging.PagedList;
 
-import com.example.paginator.googlepaginator.model.ImageDataDto;
+import com.example.paginator.googlepaginator.model.ImageItemDto;
 import com.example.paginator.googlepaginator.paginator.state.NetworkState;
 
 import java.util.concurrent.Executor;
@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
  * @author mihaylov
  */
 public class ImageViewModel extends ViewModel {
-    public LiveData<PagedList<ImageDataDto>> userList;
+    public LiveData<PagedList<ImageItemDto>> userList;
     public LiveData<NetworkState> networkState;
     Executor executor;
     LiveData<ItemKeyedImageDataSource> tDataSource;

@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.paginator.googlepaginator.R;
-import com.example.paginator.googlepaginator.model.ImageDataDto;
 import com.example.paginator.googlepaginator.model.ImageItemDto;
 import com.example.paginator.googlepaginator.paginator.state.NetworkState;
 import com.example.paginator.googlepaginator.paginator.state.Status;
@@ -28,14 +27,14 @@ import butterknife.ButterKnife;
  *
  * @author mihaylov
  */
-public class ImagesAdapter extends PagedListAdapter<ImageDataDto, RecyclerView.ViewHolder> {
+public class ImagesAdapter extends PagedListAdapter<ImageItemDto, RecyclerView.ViewHolder> {
     private NetworkState networkState;
 
-    public ImagesAdapter(@NonNull DiffCallback<ImageDataDto> diffCallback) {
+    public ImagesAdapter(@NonNull DiffCallback<ImageItemDto> diffCallback) {
         super(diffCallback);
     }
 
-    public ImagesAdapter(@NonNull ListAdapterConfig<ImageDataDto> config) {
+    public ImagesAdapter(@NonNull ListAdapterConfig<ImageItemDto> config) {
         super(config);
     }
 
@@ -59,7 +58,7 @@ public class ImagesAdapter extends PagedListAdapter<ImageDataDto, RecyclerView.V
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         switch (getItemViewType(position)) {
             case R.layout.item_image:
-                ((GalleryImageViewHolder) holder).bindTo(getItem(0).getItems().get(position));
+                ((GalleryImageViewHolder) holder).bindTo(getItem(position));
                 break;
             case R.layout.network_state_item:
                 ((NetworkStateItemViewHolder) holder).bindView(networkState);

@@ -25,14 +25,14 @@ public class ImageDataDto {
     private String prevCursor;
     private String nextCursor;
 
-    public static DiffCallback<ImageDataDto> DIFF_CALLBACK = new DiffCallback<ImageDataDto>() {
+    public static DiffCallback<ImageItemDto> DIFF_CALLBACK = new DiffCallback<ImageItemDto>() {
         @Override
-        public boolean areItemsTheSame(@NonNull ImageDataDto oldItem, @NonNull ImageDataDto newItem) {
-            return oldItem.nextCursor == newItem.nextCursor;
+        public boolean areItemsTheSame(@NonNull ImageItemDto oldItem, @NonNull ImageItemDto newItem) {
+            return oldItem.getName().equals(newItem.getName());
         }
 
         @Override
-        public boolean areContentsTheSame(@NonNull ImageDataDto oldItem, @NonNull ImageDataDto newItem) {
+        public boolean areContentsTheSame(@NonNull ImageItemDto oldItem, @NonNull ImageItemDto newItem) {
             return oldItem.equals(newItem);
         }
     };

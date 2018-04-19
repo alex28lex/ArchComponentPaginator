@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.ProgressBar;
 
 import com.example.paginator.googlepaginator.model.ImageDataDto;
+import com.example.paginator.googlepaginator.model.ImageItemDto;
 import com.example.paginator.googlepaginator.paginator.ImageViewModel;
 import com.example.paginator.googlepaginator.paginator.ImagesAdapter;
 import com.example.paginator.googlepaginator.paginator.state.NetworkState;
@@ -36,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         imageViewModel = ViewModelProviders.of(this).get(ImageViewModel.class);
         imagesAdapter = new ImagesAdapter(ImageDataDto.DIFF_CALLBACK);
 
-        imageViewModel.userList.observe(this, new Observer<PagedList<ImageDataDto>>() {
+        imageViewModel.userList.observe(this, new Observer<PagedList<ImageItemDto>>() {
             @Override
-            public void onChanged(@Nullable PagedList<ImageDataDto> imageDataDtos) {
+            public void onChanged(@Nullable PagedList<ImageItemDto> imageDataDtos) {
                 imagesAdapter.setList(imageDataDtos);
             }
         });
